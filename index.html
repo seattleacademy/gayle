@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>SAAS Graduation Planner</title>
+    <style type="text/css">
+    .card {
+        width: 18rem;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+         <!-- start plan row -->
+        <div class="row">
+
+            <!-- start left column -->
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Requirements</h5>
+                        <ul class="list-group list-group-flush" id="theReqs">
+                            <!-- filled in by script -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- end left column -->
+
+            <!-- start right column -->
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="dropdown">
+                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" data-term=1>
+                                Add course
+                            </button>
+                            <div class="dropdown-menu">
+                                <!-- filled in by script -->
+                            </div>
+                        </div>
+                        <ul class="list-group list-group-flush" id="myCourses">
+                            <!-- filled in by script -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- end right column -->
+
+        </div>
+        <!-- end plan row -->
+    </div>
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+    var myCourses = [];
+    var reqs = [];
+    var courses = [];
+    var myCourses = [];
+
+    function makeReq(name, count) {
+        var req = {};
+        req.name = name;
+        req.count = count;
+        return req;
+    }
+
+    reqs.push(makeReq("CompThinking", 2));
+    reqs.push(makeReq("English", 12));
+    reqs.push(makeReq("History", 9));
+
+    function reqCount(theReq) {
+        var count = 0;
+        for (var i = 0; i < myCourses.length; i++) {
+            if (myCourses[i].req == theReq) {
+                count++
+            }
+        }
+        return count;
+    }
+
+    function updateReqsList() {
+        var reqlist = ""
+        for (var i = 0; i < reqs.length; i++) {
+            reqlist += '<li class="list-group-item">';
+            reqlist += reqs[i].name;
+            reqlist += ' ' + reqCount(reqs[i].name) + '/' + reqs[i].count;
+            reqlist += "</li>";
+        }
+        $('#theReqs').html(reqlist);
+    }
+
+    updateReqsList(reqs);
+
+    function makeCourse(name, req) {
+        var course = {};
+        course.name = name;
+        course.req = req;
+        return course;
+    }
+
+    courses.push(makeCourse("Software Development", "CompThinking"));
+    courses.push(makeCourse("Computational Thinking", "CompThinking"));
+    courses.push(makeCourse("History 9", "History"));
+
+    function makeCoursesMenu(courses) {
+        var menu = "";
+        for (var i = 0; i < courses.length; i++) {
+            var item = '<button class="dropdown-item coursesitem" data-item=';
+            item += i;
+            item += '>' + courses[i].name + '</button>';
+            menu += item;
+        }
+        return menu;
+    }
+
+    $(".dropdown-menu").html(makeCoursesMenu(courses));
+
+    function addCourse() {
+        var item = this.getAttribute('data-item');
+        myCourses.push(courses[item]);
+        updateCourseList(myCourses);
+        updateReqsList(reqs);
+    }
+
+    function removeCourse(e) {
+        var item = this.getAttribute('data-item');
+        var removed = myCourses.splice(item, 1);
+        updateCourseList(myCourses);
+        updateReqsList(reqs);
+    }
+
+    function updateCourseList(myCourses) {
+        var classlist = ""
+        for (var i = 0; i < myCourses.length; i++) {
+            classlist += '<li class="list-group-item">';
+            classlist += myCourses[i].name;
+            classlist += '<button type="button" class="close" data-item='
+            classlist += i;
+            classlist += '><span>&times;</span></button>'
+            classlist += "</li>";
+        }
+        $('#myCourses').html(classlist);
+        return myCourses;
+    }
+    
+    $(".coursesitem").click(addCourse);
+    $('body').on('click', '.close', removeCourse);
+    </script>
+</body>
+
+</html>
