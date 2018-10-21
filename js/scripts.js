@@ -92,13 +92,27 @@ function updateCourseList(myCourses) {
     return myCourses;
 }
 
-$('.container').load('plan.html',loadterms);
+$('.container').load('plan.html', loadnav);
 
-function loadterms(){
-    $('#terms').load('terms.html',startupscripts);
+function loadnav(){
+   $.get("nav.html", function(data) {
+            $('.container').prepend(data);
+            loadterms()
+        }); 
 }
 
-function startupscripts(){
+function loadterms() {
+    $('#terms').load('terms.html', startupscripts);
+}
+
+function startupscripts() {
+    $.get("banner.html", function(data) {
+        $('.container').prepend(data);
+        // $.get("nav.html", function(data) {
+        //     $('.container').prepend(data);
+        // });
+    });
+
     updateReqsList(reqs);
     $(".dropdown-menu").html(makeCoursesMenu(courses));
     $(".coursesitem").click(addCourse);
