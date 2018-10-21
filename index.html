@@ -86,11 +86,16 @@
     }
 
     function updateReqsList() {
-        var reqlist = ""
+        var reqlist = "";
         for (var i = 0; i < reqs.length; i++) {
             reqlist += '<li class="list-group-item">';
-            reqlist += reqs[i].name;
-            reqlist += ' ' + reqCount(reqs[i].name) + '/' + reqs[i].count;
+            reqlist += '<div class="progress">';
+            reqlist += '<div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width:'
+            reqlist += ((reqCount(reqs[i].name) / reqs[i].count) * 100);
+            reqlist += '%">'
+            reqlist += reqs[i].name + ' ' + reqCount(reqs[i].name) + '/' + reqs[i].count;
+            reqlist += '</div>' //close .progress-bar div
+            reqlist += '</div>' //close .progress div
             reqlist += "</li>";
         }
         $('#theReqs').html(reqlist);
