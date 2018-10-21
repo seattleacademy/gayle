@@ -40,7 +40,6 @@ function updateReqsList() {
     $('#theReqs').html(reqlist);
 }
 
-updateReqsList(reqs);
 
 function makeCourse(name, req) {
     var course = {};
@@ -64,7 +63,6 @@ function makeCoursesMenu(courses) {
     return menu;
 }
 
-$(".dropdown-menu").html(makeCoursesMenu(courses));
 
 function addCourse() {
     var item = this.getAttribute('data-item');
@@ -94,5 +92,15 @@ function updateCourseList(myCourses) {
     return myCourses;
 }
 
-$(".coursesitem").click(addCourse);
-$('body').on('click', '.close', removeCourse);
+$('.container').load('plan.html',loadterms);
+
+function loadterms(){
+    $('#terms').load('terms.html',startupscripts);
+}
+
+function startupscripts(){
+    updateReqsList(reqs);
+    $(".dropdown-menu").html(makeCoursesMenu(courses));
+    $(".coursesitem").click(addCourse);
+    $('body').on('click', '.close', removeCourse);
+}
