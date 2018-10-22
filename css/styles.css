@@ -1,3 +1,10 @@
 .card {
     width: 18rem;
 }
+
+/*Needed because long course list is problem*/
+.scrollable-menu {
+    height: auto;
+    max-height: 200px;
+    overflow-x: hidden;
+}

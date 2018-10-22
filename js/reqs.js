@@ -7,6 +7,7 @@ function makeReq(name, count) {
     return req;
 }
 
+//Derived from http://math.seattleacademy.org/milanfillipi/testforday17.html
 reqs.push(makeReq("English", 12));
 reqs.push(makeReq("History", 9));
 reqs.push(makeReq("Science", 9));

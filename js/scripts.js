@@ -1,6 +1,4 @@
 var myCourses = [];
-var courses = [];
-var myCourses = [];
 
 function reqCount(theReq) {
     var count = 0;
@@ -27,18 +25,6 @@ function updateReqsList() {
     }
     $('#theReqs').html(reqlist);
 }
-
-
-function makeCourse(name, req) {
-    var course = {};
-    course.name = name;
-    course.req = req;
-    return course;
-}
-
-courses.push(makeCourse("Software Development", "CompThinking"));
-courses.push(makeCourse("Computational Thinking", "CompThinking"));
-courses.push(makeCourse("History 9", "History"));
 
 function makeCoursesMenu(courses) {
     var menu = "";
