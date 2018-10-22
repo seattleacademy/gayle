@@ -1,18 +1,6 @@
 var myCourses = [];
-var reqs = [];
 var courses = [];
 var myCourses = [];
-
-function makeReq(name, count) {
-    var req = {};
-    req.name = name;
-    req.count = count;
-    return req;
-}
-
-reqs.push(makeReq("CompThinking", 2));
-reqs.push(makeReq("English", 12));
-reqs.push(makeReq("History", 9));
 
 function reqCount(theReq) {
     var count = 0;
@@ -94,11 +82,11 @@ function updateCourseList(myCourses) {
 
 $('.container').load('plan.html', loadnav);
 
-function loadnav(){
-   $.get("nav.html", function(data) {
-            $('.container').prepend(data);
-            loadterms()
-        }); 
+function loadnav() {
+    $.get("nav.html", function(data) {
+        $('.container').prepend(data);
+        loadterms()
+    });
 }
 
 function loadterms() {
