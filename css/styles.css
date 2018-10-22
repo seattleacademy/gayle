@@ -8,3 +8,6 @@
     max-height: 200px;
     overflow-x: hidden;
 }
+.progress{
+	background: black;
+}
