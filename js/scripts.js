@@ -78,14 +78,7 @@ function updateCourseList() {
     }
 }
 
-$('#maincontainer').load('plan.html', loadnav);
-
-function loadnav() {
-    $.get("nav.html", function(data) {
-        $('#maincontainer').prepend(data);
-        loadterms()
-    });
-}
+$('#maincontainer').load('plan.html', loadterms);
 
 function loadterms() {
     $('#terms').load('terms.html', startupscripts);
@@ -93,15 +86,7 @@ function loadterms() {
 
 function startupscripts() {
     $(".course-menu").html(makeCoursesMenu(courses));
-    // $.get("banner.html", function(data) {
-    //     $('#maincontainer').prepend(data);
-    //     // $.get("nav.html", function(data) {
-    //     //     $('#maincontainer').prepend(data);
-    //     // });
-    // });
-
     updateReqsList(reqs);
-
     $('body').on('click', '.coursesitem', addCourse);
     $('body').on('click', '.close', removeCourse);
 }
