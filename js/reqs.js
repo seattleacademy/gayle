@@ -7,8 +7,6 @@
       return req;
   }
 
-
-
   reqs.push(makeReq("English", 12));
   reqs.push(makeReq("History", 9));
   reqs.push(makeReq("Science", 9));

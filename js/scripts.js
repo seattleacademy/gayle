@@ -26,7 +26,7 @@ function updateReqsList() {
     $('#theReqs').html(reqlist);
 }
 
-function makeCoursesMenu(courses) {
+function makeCoursesMenu() {
     var menu = "";
     for (var i = 0; i < courses.length; i++) {
         var item = '<button class="dropdown-item coursesitem" data-item=';
@@ -39,38 +39,50 @@ function makeCoursesMenu(courses) {
 
 
 function addCourse() {
+    var term = this.parentElement.getAttribute('data-term');
     var item = this.getAttribute('data-item');
-    myCourses.push(courses[item]);
-    updateCourseList(myCourses);
+
+    //FIXME:  copy element from array by value rather than extracting values
+    let theCourse = {};
+    theCourse.name = courses[item].name;
+    theCourse.req = courses[item].req;
+    theCourse.term = term;
+    theCourse.time = Date.now();
+    myCourses.push(theCourse);
+
+    updateCourseList();
     updateReqsList(reqs);
 }
 
-function removeCourse(e) {
+function removeCourse() {
     var item = this.getAttribute('data-item');
     var removed = myCourses.splice(item, 1);
     updateCourseList(myCourses);
     updateReqsList(reqs);
 }
 
-function updateCourseList(myCourses) {
-    var classlist = ""
-    for (var i = 0; i < myCourses.length; i++) {
-        classlist += '<li class="list-group-item">';
-        classlist += myCourses[i].name;
-        classlist += '<button type="button" class="close" data-item='
-        classlist += i;
-        classlist += '><span>&times;</span></button>'
-        classlist += "</li>";
+function updateCourseList() {
+    for (var theTerm = 1; theTerm <= 12; theTerm++) {
+        var classlist = "";
+        for (var i = 0; i < myCourses.length; i++) {
+            if (myCourses[i].term == theTerm) {
+                classlist += '<li class="list-group-item">';
+                classlist += myCourses[i].name;
+                classlist += '<button type="button" class="close"';
+                classlist += 'data-item=' + i + '>';
+                classlist += '<span>&times;</span></button>'
+                classlist += "</li>";
+            }
+        }
+        $('.myCourses[data-term=' + theTerm + ']').html(classlist);
     }
-    $('#myCourses').html(classlist);
-    return myCourses;
 }
 
-$('.container').load('plan.html', loadnav);
+$('#maincontainer').load('plan.html', loadnav);
 
 function loadnav() {
     $.get("nav.html", function(data) {
-        $('.container').prepend(data);
+        $('#maincontainer').prepend(data);
         loadterms()
     });
 }
@@ -80,15 +92,16 @@ function loadterms() {
 }
 
 function startupscripts() {
+    $(".course-menu").html(makeCoursesMenu(courses));
     $.get("banner.html", function(data) {
-        $('.container').prepend(data);
+        $('#maincontainer').prepend(data);
         // $.get("nav.html", function(data) {
-        //     $('.container').prepend(data);
+        //     $('#maincontainer').prepend(data);
         // });
     });
 
     updateReqsList(reqs);
-    $(".dropdown-menu").html(makeCoursesMenu(courses));
-    $(".coursesitem").click(addCourse);
+
+    $('body').on('click', '.coursesitem', addCourse);
     $('body').on('click', '.close', removeCourse);
 }
