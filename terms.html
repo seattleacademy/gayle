@@ -1,215 +1,230 @@
-    <div class="row">
-        <div class="col-sm-4">
-            <div class="card">
-                <div class="card-body">
-                    <div class="dropdown">
-                        <button class="btn btn-primary btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
-                            Add course
-                        </button>
-                        <div class="dropdown-menu scrollable-menu course-menu" data-term=1>
-                            <!-- filled in by script -->
-                        </div>
-                    </div>
-                    <ul class="list-group list-group-flush myCourses" data-term=1>
-                        <!-- filled in by script -->
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="card">
-                <div class="card-body">
-                    <div class="dropdown">
-                        <button class="btn btn-primary btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
-                            Add course
-                        </button>
-                        <div class="dropdown-menu scrollable-menu course-menu" data-term=2>
-                            <!-- filled in by script -->
-                        </div>
-                    </div>
-                    <ul class="list-group list-group-flush myCourses" data-term=2>
-                        <!-- filled in by script -->
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="card">
-                <div class="card-body">
-                    <div class="dropdown">
-                        <button class="btn btn-primary btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
-                            Add course
-                        </button>
-                        <div class="dropdown-menu scrollable-menu course-menu" data-term=3>
-                            <!-- filled in by script -->
-                        </div>
-                    </div>
-                    <ul class="list-group list-group-flush myCourses" data-term=3>
-                        <!-- filled in by script -->
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="alert alert-warning alert-dismissible fade show" id="banner" role="alert">
+    <button type="button" class="close" data-dismiss="alert">
+        <span>&times;</span>
+    </button>
+    <h4>Welcome to the Seattle Academy Graduation Planner developed by Gary Anderson's Software Development Class.</h4>
 
-    <div class="row">
-        <div class="col-sm-4">
-            <div class="card">
-                <div class="card-body">
-                    <div class="dropdown">
-                        <button class="btn btn-primary btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
-                            Add course
-                        </button>
-                        <div class="dropdown-menu scrollable-menu course-menu" data-term=4>
-                            <!-- filled in by script -->
-                        </div>
-                    </div>
-                    <ul class="list-group list-group-flush myCourses" data-term=4>
-                        <!-- filled in by script -->
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="card">
-                <div class="card-body">
-                    <div class="dropdown">
-                        <button class="btn btn-primary btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
-                            Add course
-                        </button>
-                        <div class="dropdown-menu scrollable-menu course-menu" data-term=5>
-                            <!-- filled in by script -->
-                        </div>
-                    </div>
-                    <ul class="list-group list-group-flush myCourses" data-term=5>
-                        <!-- filled in by script -->
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="card">
-                <div class="card-body">
-                    <div class="dropdown">
-                        <button class="btn btn-primary btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
-                            Add course
-                        </button>
-                        <div class="dropdown-menu scrollable-menu course-menu" data-term=6>
-                            <!-- filled in by script -->
-                        </div>
-                    </div>
-                    <ul class="list-group list-group-flush myCourses" data-term=6>
-                        <!-- filled in by script -->
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
+    <ul>
+        <li>Select the graduation year and add classes to trimesters until you have met all requirements</li>
+        <li>Students and advisors can find a report on their completed classes in <a href="https://saas.seniormbp.com/SeniorApps/facelets/myProfile/myDocument/myDocument.xhtml">My documents</a> of My Backpack.</li>
+        <li>Report bugs or suggestions to someone on the development team or create an issue in the tracker.</li>
+        <li>For convience, fill with default courses for the class of 2022 with a freshman math course of Geometry and first language course of Spanish 2.</li>
+    </ul>
 
-    <div class="row">
-        <div class="col-sm-4">
-            <div class="card">
-                <div class="card-body">
-                    <div class="dropdown">
-                        <button class="btn btn-primary btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
-                            Add course
-                        </button>
-                        <div class="dropdown-menu scrollable-menu course-menu" data-term=7>
-                            <!-- filled in by script -->
-                        </div>
-                    </div>
-                    <ul class="list-group list-group-flush myCourses" data-term=7>
+    <div>
+        <button class="btn" data-dismiss="alert">Cancel</button>
+        <button class="btn" id="autoFill">Auto Fill</button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-4">
+        <div class="card">
+            <div class="card-body">
+                <div class="dropdown">
+                    <button class="btn btn-primary btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+                        Add course
+                    </button>
+                    <div class="dropdown-menu scrollable-menu course-menu" data-term=1>
                         <!-- filled in by script -->
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="card">
-                <div class="card-body">
-                    <div class="dropdown">
-                        <button class="btn btn-primary btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
-                            Add course
-                        </button>
-                        <div class="dropdown-menu scrollable-menu course-menu" data-term=8>
-                            <!-- filled in by script -->
-                        </div>
                     </div>
-                    <ul class="list-group list-group-flush myCourses" data-term=8>
-                        <!-- filled in by script -->
-                    </ul>
                 </div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="card">
-                <div class="card-body">
-                    <div class="dropdown">
-                        <button class="btn btn-primary btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
-                            Add course
-                        </button>
-                        <div class="dropdown-menu scrollable-menu course-menu" data-term=9>
-                            <!-- filled in by script -->
-                        </div>
-                    </div>
-                    <ul class="list-group list-group-flush myCourses" data-term=9>
-                        <!-- filled in by script -->
-                    </ul>
-                </div>
+                <ul class="list-group list-group-flush myCourses" data-term=1>
+                    <!-- filled in by script -->
+                </ul>
             </div>
         </div>
     </div>
-
-     <div class="row">
-        <div class="col-sm-4">
-            <div class="card">
-                <div class="card-body">
-                    <div class="dropdown">
-                        <button class="btn btn-primary btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
-                            Add course
-                        </button>
-                        <div class="dropdown-menu scrollable-menu course-menu" data-term=10>
-                            <!-- filled in by script -->
-                        </div>
-                    </div>
-                    <ul class="list-group list-group-flush myCourses" data-term=10>
+    <div class="col-sm-4">
+        <div class="card">
+            <div class="card-body">
+                <div class="dropdown">
+                    <button class="btn btn-primary btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+                        Add course
+                    </button>
+                    <div class="dropdown-menu scrollable-menu course-menu" data-term=2>
                         <!-- filled in by script -->
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="card">
-                <div class="card-body">
-                    <div class="dropdown">
-                        <button class="btn btn-primary btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
-                            Add course
-                        </button>
-                        <div class="dropdown-menu scrollable-menu course-menu" data-term=11>
-                            <!-- filled in by script -->
-                        </div>
                     </div>
-                    <ul class="list-group list-group-flush myCourses" data-term=11>
-                        <!-- filled in by script -->
-                    </ul>
                 </div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="card">
-                <div class="card-body">
-                    <div class="dropdown">
-                        <button class="btn btn-primary btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
-                            Add course
-                        </button>
-                        <div class="dropdown-menu scrollable-menu course-menu" data-term=12>
-                            <!-- filled in by script -->
-                        </div>
-                    </div>
-                    <ul class="list-group list-group-flush myCourses" data-term=12>
-                        <!-- filled in by script -->
-                    </ul>
-                </div>
+                <ul class="list-group list-group-flush myCourses" data-term=2>
+                    <!-- filled in by script -->
+                </ul>
             </div>
         </div>
     </div>
+    <div class="col-sm-4">
+        <div class="card">
+            <div class="card-body">
+                <div class="dropdown">
+                    <button class="btn btn-primary btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+                        Add course
+                    </button>
+                    <div class="dropdown-menu scrollable-menu course-menu" data-term=3>
+                        <!-- filled in by script -->
+                    </div>
+                </div>
+                <ul class="list-group list-group-flush myCourses" data-term=3>
+                    <!-- filled in by script -->
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-4">
+        <div class="card">
+            <div class="card-body">
+                <div class="dropdown">
+                    <button class="btn btn-primary btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+                        Add course
+                    </button>
+                    <div class="dropdown-menu scrollable-menu course-menu" data-term=4>
+                        <!-- filled in by script -->
+                    </div>
+                </div>
+                <ul class="list-group list-group-flush myCourses" data-term=4>
+                    <!-- filled in by script -->
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="card">
+            <div class="card-body">
+                <div class="dropdown">
+                    <button class="btn btn-primary btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+                        Add course
+                    </button>
+                    <div class="dropdown-menu scrollable-menu course-menu" data-term=5>
+                        <!-- filled in by script -->
+                    </div>
+                </div>
+                <ul class="list-group list-group-flush myCourses" data-term=5>
+                    <!-- filled in by script -->
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="card">
+            <div class="card-body">
+                <div class="dropdown">
+                    <button class="btn btn-primary btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+                        Add course
+                    </button>
+                    <div class="dropdown-menu scrollable-menu course-menu" data-term=6>
+                        <!-- filled in by script -->
+                    </div>
+                </div>
+                <ul class="list-group list-group-flush myCourses" data-term=6>
+                    <!-- filled in by script -->
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-4">
+        <div class="card">
+            <div class="card-body">
+                <div class="dropdown">
+                    <button class="btn btn-primary btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+                        Add course
+                    </button>
+                    <div class="dropdown-menu scrollable-menu course-menu" data-term=7>
+                        <!-- filled in by script -->
+                    </div>
+                </div>
+                <ul class="list-group list-group-flush myCourses" data-term=7>
+                    <!-- filled in by script -->
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="card">
+            <div class="card-body">
+                <div class="dropdown">
+                    <button class="btn btn-primary btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+                        Add course
+                    </button>
+                    <div class="dropdown-menu scrollable-menu course-menu" data-term=8>
+                        <!-- filled in by script -->
+                    </div>
+                </div>
+                <ul class="list-group list-group-flush myCourses" data-term=8>
+                    <!-- filled in by script -->
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="card">
+            <div class="card-body">
+                <div class="dropdown">
+                    <button class="btn btn-primary btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+                        Add course
+                    </button>
+                    <div class="dropdown-menu scrollable-menu course-menu" data-term=9>
+                        <!-- filled in by script -->
+                    </div>
+                </div>
+                <ul class="list-group list-group-flush myCourses" data-term=9>
+                    <!-- filled in by script -->
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-4">
+        <div class="card">
+            <div class="card-body">
+                <div class="dropdown">
+                    <button class="btn btn-primary btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+                        Add course
+                    </button>
+                    <div class="dropdown-menu scrollable-menu course-menu" data-term=10>
+                        <!-- filled in by script -->
+                    </div>
+                </div>
+                <ul class="list-group list-group-flush myCourses" data-term=10>
+                    <!-- filled in by script -->
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="card">
+            <div class="card-body">
+                <div class="dropdown">
+                    <button class="btn btn-primary btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+                        Add course
+                    </button>
+                    <div class="dropdown-menu scrollable-menu course-menu" data-term=11>
+                        <!-- filled in by script -->
+                    </div>
+                </div>
+                <ul class="list-group list-group-flush myCourses" data-term=11>
+                    <!-- filled in by script -->
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="card">
+            <div class="card-body">
+                <div class="dropdown">
+                    <button class="btn btn-primary btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+                        Add course
+                    </button>
+                    <div class="dropdown-menu scrollable-menu course-menu" data-term=12>
+                        <!-- filled in by script -->
+                    </div>
+                </div>
+                <ul class="list-group list-group-flush myCourses" data-term=12>
+                    <!-- filled in by script -->
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

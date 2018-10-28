@@ -13,7 +13,7 @@ function reqCount(theReq) {
 function updateReqsList() {
     var reqlist = "";
     for (var i = 0; i < reqs.length; i++) {
-        reqlist += '<li class="list-group-item">';
+        reqlist += '<li class="list-group-item py-1">';
         reqlist += '<div class="progress">';
         reqlist += '<div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width:'
         reqlist += ((reqCount(reqs[i].name) / reqs[i].count) * 100);
@@ -66,7 +66,7 @@ function updateCourseList() {
         var classlist = "";
         for (var i = 0; i < myCourses.length; i++) {
             if (myCourses[i].term == theTerm) {
-                classlist += '<li class="list-group-item">';
+                classlist += '<li class="list-group-item py-0">';
                 classlist += myCourses[i].name;
                 classlist += '<button type="button" class="close"';
                 classlist += 'data-item=' + i + '>';
@@ -93,12 +93,12 @@ function loadterms() {
 
 function startupscripts() {
     $(".course-menu").html(makeCoursesMenu(courses));
-    $.get("banner.html", function(data) {
-        $('#maincontainer').prepend(data);
-        // $.get("nav.html", function(data) {
-        //     $('#maincontainer').prepend(data);
-        // });
-    });
+    // $.get("banner.html", function(data) {
+    //     $('#maincontainer').prepend(data);
+    //     // $.get("nav.html", function(data) {
+    //     //     $('#maincontainer').prepend(data);
+    //     // });
+    // });
 
     updateReqsList(reqs);
 

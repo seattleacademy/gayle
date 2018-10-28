@@ -11,3 +11,9 @@
 .progress{
 	background: black;
 }
+
+/* Overrides list-group-item from Bootstrap */ 
+/*.list-group-item {
+    padding: 1px 1px
+    height: 10px;
+}*/
