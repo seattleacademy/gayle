@@ -66,7 +66,7 @@ function updateCourseList() {
         var classlist = "";
         for (var i = 0; i < myCourses.length; i++) {
             if (myCourses[i].term == theTerm) {
-                classlist += '<li class="list-group-item py-0">';
+                classlist += '<li class="list-group-item py-0 coursename">';
                 classlist += myCourses[i].name;
                 classlist += '<button type="button" class="close"';
                 classlist += 'data-item=' + i + '>';
@@ -83,6 +83,7 @@ $('#maincontainer').load('plan.html', loadterms);
 function loadterms() {
     $('#terms').load('terms.html', startupscripts);
 }
+
 
 function startupscripts() {
     $(".course-menu").html(makeCoursesMenu(courses));

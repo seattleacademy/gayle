@@ -12,6 +12,9 @@
 	background: black;
 }
 
+.coursename{
+	font-size:75%
+}
 /* Overrides list-group-item from Bootstrap */ 
 /*.list-group-item {
     padding: 1px 1px

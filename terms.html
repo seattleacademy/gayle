@@ -3,14 +3,17 @@
         <span>&times;</span>
     </button>
     <h4>Welcome to the Seattle Academy Graduation Planner developed by Gary Anderson's Software Development Class.</h4>
-
     <ul>
         <li>Select the graduation year and add classes to trimesters until you have met all requirements</li>
         <li>Students and advisors can find a report on their completed classes in <a href="https://saas.seniormbp.com/SeniorApps/facelets/myProfile/myDocument/myDocument.xhtml">My documents</a> of My Backpack.</li>
         <li>Report bugs or suggestions to someone on the development team or create an issue in the tracker.</li>
-        <li>For convience, fill with default courses for the class of 2022 with a freshman math course of Geometry and first language course of Spanish 2.</li>
+        <li>For convience, fill with default courses for the class of 2022 with a freshman math course of<select class="form-contro" id="firstmath">
+                <option>Geometry</option>
+                <option>Advanced Algebra</option>
+                <option>3</option>
+                <option>4</option>
+            </select> and first language course of Spanish 2.</li>
     </ul>
-
     <div>
         <button class="btn" data-dismiss="alert">Cancel</button>
         <button class="btn" id="autoFill">Auto Fill</button>
