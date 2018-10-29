@@ -112,9 +112,9 @@
  courses.push(makeCourse("Experimental Photography", "Visual", "Assorted Arts"));
  courses.push(makeCourse("Advanced Photography", "Visual", "Assorted Arts"));
 
- courses.push(makeCourse("CT: Machine Learning, AI", "CompThinking"));
- courses.push(makeCourse("CT: Dealing with Data", "CompThinking"));
- courses.push(makeCourse("Software Dev", "CompThinking"));
+ courses.push(makeCourse("CT: Machine Learning, AI", "CompThinking/AI"));
+ courses.push(makeCourse("CT: Dealing with Data", "CompThinking/AI"));
+ courses.push(makeCourse("Software Development", "CompThinking/AI"));
 
  courses.push(makeCourse("Costume Design", "Theater", "Assorted Arts"));
  courses.push(makeCourse("Mask Making", "Theater", "Assorted Arts"));
