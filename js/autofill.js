@@ -1,34 +1,4 @@
 function autoFill() {
-    myCourses.push({ name: "English 9", req: "English", term: 1 });
-    myCourses.push({ name: "English 9", req: "English", term: 2 });
-    myCourses.push({ name: "English 9", req: "English", term: 3 });
-    myCourses.push({ name: "English 10", req: "English", term: 4 });
-    myCourses.push({ name: "English 10", req: "English", term: 5 });
-    myCourses.push({ name: "English 10", req: "English", term: 6 });
-    myCourses.push({ name: "English 11", req: "English", term: 7 });
-    myCourses.push({ name: "English 11", req: "English", term: 8 });
-    myCourses.push({ name: "English 11", req: "English", term: 9 });
-
-    myCourses.push({ name: "History 9", req: "History", term: 1 });
-    myCourses.push({ name: "History 9", req: "History", term: 2 });
-    myCourses.push({ name: "History 9", req: "History", term: 3 });
-    myCourses.push({ name: "History 10", req: "History", term: 4 });
-    myCourses.push({ name: "History 10", req: "History", term: 5 });
-    myCourses.push({ name: "History 10", req: "History", term: 6 });
-    myCourses.push({ name: "History 11", req: "History", term: 7 });
-    myCourses.push({ name: "History 11", req: "History", term: 8 });
-    myCourses.push({ name: "History 11", req: "History", term: 9 });
-
-    myCourses.push({ name: "Sci Investigation", req: "Science", term: 1 });
-    myCourses.push({ name: "Sci Investigation", req: "Science", term: 2 });
-    myCourses.push({ name: "Sci Investigation", req: "Science", term: 3 });
-    myCourses.push({ name: "Chemistry", req: "Science", term: 4 });
-    myCourses.push({ name: "Chemistry", req: "Science", term: 5 });
-    myCourses.push({ name: "Chemistry", req: "Science", term: 6 });
-    myCourses.push({ name: "Biology", req: "Science", term: 7 });
-    myCourses.push({ name: "Biology", req: "Science", term: 8 });
-    myCourses.push({ name: "Biology", req: "Science", term: 9 });
-
     var firstmath = $("#firstmath option:selected").text();
 
     if (firstmath == "Geometry") {
@@ -59,6 +29,38 @@ function autoFill() {
         myCourses.push({ name: "Spanish 5", req: "World Languages", term: 10 });
         myCourses.push({ name: "Spanish 5", req: "World Languages", term: 11 });
         myCourses.push({ name: "Spanish 5", req: "World Languages", term: 12 });
+
+
+    myCourses.push({ name: "English 9", req: "English", term: 1 });
+    myCourses.push({ name: "English 9", req: "English", term: 2 });
+    myCourses.push({ name: "English 9", req: "English", term: 3 });
+    myCourses.push({ name: "English 10", req: "English", term: 4 });
+    myCourses.push({ name: "English 10", req: "English", term: 5 });
+    myCourses.push({ name: "English 10", req: "English", term: 6 });
+    myCourses.push({ name: "English 11", req: "English", term: 7 });
+    myCourses.push({ name: "English 11", req: "English", term: 8 });
+    myCourses.push({ name: "English 11", req: "English", term: 9 });
+
+    myCourses.push({ name: "History 9", req: "History", term: 1 });
+    myCourses.push({ name: "History 9", req: "History", term: 2 });
+    myCourses.push({ name: "History 9", req: "History", term: 3 });
+    myCourses.push({ name: "History 10", req: "History", term: 4 });
+    myCourses.push({ name: "History 10", req: "History", term: 5 });
+    myCourses.push({ name: "History 10", req: "History", term: 6 });
+    myCourses.push({ name: "History 11", req: "History", term: 7 });
+    myCourses.push({ name: "History 11", req: "History", term: 8 });
+    myCourses.push({ name: "History 11", req: "History", term: 9 });
+
+    myCourses.push({ name: "Sci Investigation", req: "Science", term: 1 });
+    myCourses.push({ name: "Sci Investigation", req: "Science", term: 2 });
+    myCourses.push({ name: "Sci Investigation", req: "Science", term: 3 });
+    myCourses.push({ name: "Chemistry", req: "Science", term: 4 });
+    myCourses.push({ name: "Chemistry", req: "Science", term: 5 });
+    myCourses.push({ name: "Chemistry", req: "Science", term: 6 });
+    myCourses.push({ name: "Biology", req: "Science", term: 7 });
+    myCourses.push({ name: "Biology", req: "Science", term: 8 });
+    myCourses.push({ name: "Biology", req: "Science", term: 9 });
+
     $(".alert").alert('close')
     updateCourseList();
     updateReqsList(reqs);

@@ -1,4 +1,5 @@
 var myCourses = [];
+var cohort = "2022";
 
 function reqCount(theReq) {
     var count = 0;
@@ -16,9 +17,22 @@ function updateReqsList() {
         reqlist += '<li class="list-group-item py-1">';
         reqlist += '<div class="progress">';
         reqlist += '<div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width:'
-        reqlist += ((reqCount(reqs[i].name) / reqs[i].count) * 100);
+        reqlist += ((reqCount(reqs[i].name) / reqs[i].recommended) * 100);
         reqlist += '%">'
         reqlist += reqs[i].name + ' ' + reqCount(reqs[i].name) + '/' + reqs[i].count;
+        reqlist += '</div>' //close .progress-bar div
+        reqlist += '</div>' //close .progress div
+        reqlist += "</li>";
+    }
+    accum = accumList(cohort,myCourses);
+    console.log(accum)
+    for (var i = 0; i < accum.length; i++) {
+        reqlist += '<li class="list-group-item py-1">';
+        reqlist += '<div class="progress">';
+        reqlist += '<div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width:'
+        reqlist += ((accum[i].earned / accum[i].recommended) * 100);
+        reqlist += '%">'
+        reqlist += accum[i].name + ' ' + accum[i].earned + '/' + accum[i].count;
         reqlist += '</div>' //close .progress-bar div
         reqlist += '</div>' //close .progress div
         reqlist += "</li>";
@@ -83,7 +97,6 @@ $('#maincontainer').load('plan.html', loadterms);
 function loadterms() {
     $('#terms').load('terms.html', startupscripts);
 }
-
 
 function startupscripts() {
     $(".course-menu").html(makeCoursesMenu(courses));
