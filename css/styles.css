@@ -20,3 +20,9 @@
     padding: 1px 1px
     height: 10px;
 }*/
+
+#inout{
+	font-size: 10px;
+	min-width: 100%;
+	white-space: pre;
+}

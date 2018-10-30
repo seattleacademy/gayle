@@ -90,6 +90,22 @@ function updateCourseList() {
         }
         $('.myCourses[data-term=' + theTerm + ']').html(classlist);
     }
+    updateInOut();
+}
+
+function updateInOut(){
+    console.log('updateinout')
+    var coursetext = "";
+    for (var i = 0; i < myCourses.length; i++){
+        coursetext += myCourses[i].name;
+        coursetext += ','
+        coursetext += myCourses[i].req;
+        coursetext += ','
+        coursetext += myCourses[i].term;
+        coursetext += '\n'
+    }
+    $("#inout").text(coursetext);
+
 }
 
 function updateCohort() {
