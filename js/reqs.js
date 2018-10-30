@@ -18,7 +18,6 @@
       reqs = [];
       if (cohort == "2022" || cohort == "2021" || cohort == "2020" || cohort == "2019") {
           reqs.push(makeReq("English", 12));
-          reqs.push(makeReq("History", 9, 12));
           reqs.push(makeReq("Math", 9, 12));
           reqs.push(makeReq("Science", 9, 12));
           reqs.push(makeReq("World Languages", 9, 12));
@@ -28,6 +27,7 @@
           reqs.push(makeReq("Theater", 1));
       }
       if (cohort == "2022" || cohort == "2021" ) {
+          reqs.push(makeReq("History", 9, 12));
           reqs.push(makeReq("P.E.", 4));
           reqs.push(makeReq("CompThinking/AI", 2));
           reqs.push(makeReq("Innovations", 2));
@@ -46,9 +46,9 @@
 
   function accumList(cohort,myCourses=[]) {
       accumreqs = [];
+
       if (cohort == "2022" || cohort=="2021"|| cohort=="2020"|| cohort=="2019") {
           var totalMathScience = {};
-          var count = 5;
           totalMathScience.name = "Math+Science";
           totalMathScience.count = 21;
           totalMathScience.earned = 0;
@@ -58,7 +58,44 @@
               totalMathScience.earned++;
             }
           }
+         accumreqs.push(totalMathScience);
       }
-      accumreqs.push(totalMathScience)
+
+
+       if (cohort == "2022" || cohort=="2021"|| cohort=="2020"|| cohort=="2019") {
+          var totalArt = {};
+          totalArt.name = "Total Art";
+          if(cohort=="2020"|| cohort=="2019"){
+            totalArt.count = 9;
+          } else{
+            totalArt.count = 7;
+          }
+          totalArt.recommended = totalArt.count;
+          totalArt.earned = 0;
+          for(var i=0; i< myCourses.length; i++){
+            if(myCourses[i].req == "Dance" || myCourses[i].req == "Music" || myCourses[i].req == "Visual" || myCourses[i].req == "Theater"){
+              totalArt.earned++;
+            }
+          }
+          accumreqs.push(totalArt)
+      } 
+
+      var totalCredits = {};
+          totalCredits.name = "Total Credits";
+          if(cohort=="2020"|| cohort=="2019"){
+            totalCredits.count = 76;
+          }
+          if(cohort=="2021"){
+            totalCredits.count = 81;
+          }
+          if(cohort=="2022"){
+            totalCredits.count = 84;
+          }
+          totalCredits.recommended = totalCredits.count;
+          totalCredits.earned = 0;
+          for(var i=0; i< myCourses.length; i++){
+              totalCredits.earned++;
+          }
+          if (totalCredits.count) accumreqs.push(totalCredits)    
       return accumreqs;
   }

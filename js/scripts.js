@@ -94,7 +94,6 @@ function updateCourseList() {
 }
 
 function updateInOut(){
-    console.log('updateinout')
     var coursetext = "";
     for (var i = 0; i < myCourses.length; i++){
         coursetext += myCourses[i].name;
