@@ -25,18 +25,18 @@ function updateReqsList() {
     }
     cohort = $("#cohort option:selected").text();
     accum = accumList(cohort, myCourses);
-        for (var i = 0; i < accum.length; i++) {
-            if (accum[i] == undefined) continue;
-            reqlist += '<li class="list-group-item py-1">';
-            reqlist += '<div class="progress">';
-            reqlist += '<div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width:'
-            reqlist += ((accum[i].earned / accum[i].recommended) * 100);
-            reqlist += '%">'
-            reqlist += accum[i].name + ' ' + accum[i].earned + '/' + accum[i].count;
-            reqlist += '</div>' //close .progress-bar div
-            reqlist += '</div>' //close .progress div
-            reqlist += "</li>";
-        }
+    for (var i = 0; i < accum.length; i++) {
+        if (accum[i] == undefined) continue;
+        reqlist += '<li class="list-group-item py-1">';
+        reqlist += '<div class="progress">';
+        reqlist += '<div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width:'
+        reqlist += ((accum[i].earned / accum[i].recommended) * 100);
+        reqlist += '%">'
+        reqlist += accum[i].name + ' ' + accum[i].earned + '/' + accum[i].count;
+        reqlist += '</div>' //close .progress-bar div
+        reqlist += '</div>' //close .progress div
+        reqlist += "</li>";
+    }
     $('#theReqs').html(reqlist);
 }
 
@@ -93,9 +93,9 @@ function updateCourseList() {
     updateInOut();
 }
 
-function updateInOut(){
+function updateInOut() {
     var coursetext = "";
-    for (var i = 0; i < myCourses.length; i++){
+    for (var i = 0; i < myCourses.length; i++) {
         coursetext += myCourses[i].name;
         coursetext += ','
         coursetext += myCourses[i].req;
@@ -113,8 +113,11 @@ function updateCohort() {
     updateReqsList(reqs);
 
 }
+$('nav').load('html/nav.html', loadmaincontainer);
 
-$('#maincontainer').load('html/plan.html', loadterms);
+function loadmaincontainer() {
+    $('#maincontainer').load('html/plan.html', loadterms);
+}
 
 function loadterms() {
     $('#terms').load('html/terms.html', startupscripts);
