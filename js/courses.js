@@ -17,6 +17,7 @@
  courses.push(makeCourse("English 12", "English"));
  courses.push(makeCourse("Honors English 11", "English"));
  courses.push(makeCourse("Honors English 12", "English"));
+ courses.push(makeCourse("Creative Writing", "English"));
 
  courses.push(makeCourse("History 9", "History"));
  courses.push(makeCourse("History 10", "History"));
@@ -25,21 +26,39 @@
  courses.push(makeCourse("Honors History 11", "History"));
  courses.push(makeCourse("Honors History 12", "History"));
 
- courses.push(makeCourse("Scientific Investigations", "Science"));
- courses.push(makeCourse("Chemistry", "Science"));
- courses.push(makeCourse("Genetics", "Science"));
- courses.push(makeCourse("Advanced Chemistry", "Science"));
- courses.push(makeCourse("Biology", "Science"));
- courses.push(makeCourse("Honors Biology", "Science"));
- courses.push(makeCourse("Physics", "Science"));
+ courses.push(makeCourse("Scientific Investigations", "Science", "Math/Science"));
+ courses.push(makeCourse("Chemistry", "Science", "Math/Science"));
+ courses.push(makeCourse("Genetics", "Science", "Math/Science"));
+ courses.push(makeCourse("Advanced Chemistry", "Science", "Math/Science"));
+ courses.push(makeCourse("Biology", "Science", "Math/Science"));
+ courses.push(makeCourse("Honors Biology", "Science", "Math/Science"));
+ courses.push(makeCourse("Physics", "Science", "Math/Science"));
+ courses.push(makeCourse("Biotechnology", "Science", "Math/Science"));
+ courses.push(makeCourse("Climate Science", "Science", "Math/Science"));
+ courses.push(makeCourse("Food Chemistry", "Science", "Math/Science"));
+ courses.push(makeCourse("Evolution", "Science", "Math/Science"));
+ courses.push(makeCourse("GIS: Urban Ecology", "Science", "Math/Science"));
+ courses.push(makeCourse("Endocrine and Nervous System", "Science", "Math/Science"));
+ courses.push(makeCourse("Infectious Diseases", "Science", "Math/Science"));
+ courses.push(makeCourse("Intro to Anatomy and Physiology", "Science", "Math/Science"));
+ courses.push(makeCourse("Intro to Neuroscience", "Science", "Math/Science"));
+ courses.push(makeCourse("Marine Science", "Science", "Math/Science"));
+ courses.push(makeCourse("Meteorology", "Science", "Math/Science"));
+ courses.push(makeCourse("Sustainability", "Science", "Assorted Arts", "Math/Science"));
+ 
 
- courses.push(makeCourse("Integrated Algebra", "Math"));
- courses.push(makeCourse("Geometry", "Math"));
- courses.push(makeCourse("Advanced Algebra", "Math"));
- courses.push(makeCourse("Precalculus", "Math"));
- courses.push(makeCourse("Calculus I", "Math"));
- courses.push(makeCourse("Calculus II", "Math"));
- courses.push(makeCourse("Statistics", "Math"));
+
+
+ courses.push(makeCourse("Integrated Algebra 9", "Math", "Math/Science"));
+ courses.push(makeCourse("Integrated Algebra 10", "Math", "Math/Science"));
+ courses.push(makeCourse("Geometry", "Math", "Math/Science"));
+ courses.push(makeCourse("Advanced Algebra", "Math", "Math/Science"));
+ courses.push(makeCourse("Precalculus", "Math", "Math/Science"));
+ courses.push(makeCourse("Calculus I", "Math", "Math/Science"));
+ courses.push(makeCourse("Calculus II", "Math", "Math/Science"));
+ courses.push(makeCourse("Statistics", "Math", "Math/Science"));
+ courses.push(makeCourse("Statistics w. Math Concepts", "Math", "Math/Science"));
+
 
  courses.push(makeCourse("Chinese 1", "World Languagues"));
  courses.push(makeCourse("Chinese 2", "World Languagues"));
@@ -112,9 +131,9 @@
  courses.push(makeCourse("Experimental Photography", "Visual", "Assorted Arts"));
  courses.push(makeCourse("Advanced Photography", "Visual", "Assorted Arts"));
 
- courses.push(makeCourse("CT: Machine Learning, AI", "CompThinking/AI"));
- courses.push(makeCourse("CT: Dealing with Data", "CompThinking/AI"));
- courses.push(makeCourse("Software Development", "CompThinking/AI"));
+ courses.push(makeCourse("CompThinking: Machine Learning, AI", "CompThinking/AI"));
+ courses.push(makeCourse("CompThinking: Dealing with Data", "CompThinking/AI"));
+ courses.push(makeCourse("Software Dev", "CompThinking/AI", "Math"));
 
  courses.push(makeCourse("Costume Design", "Theater", "Assorted Arts"));
  courses.push(makeCourse("Mask Making", "Theater", "Assorted Arts"));
@@ -129,11 +148,16 @@
  courses.push(makeCourse("Tech Theater", "Theater", "Assorted Arts"));
 
  courses.push(makeCourse("Innovations", "Innovations"));
+ courses.push(makeCourse("Curiosity", "Innovations"));
 
- courses.push(makeCourse("Entrepreneurship/Financial Literacy", "Entrepreneurship/Financial Literacy"));
+ courses.push(makeCourse("Entrepreneurship/FL", "Entrepreneurship/FL"));
 
+ courses.push(makeCourse("9th Grade Rhetoric", "Rhetoric", "Assorted Arts", "Additional Credits"));
  courses.push(makeCourse("Speech", "Rhetoric", "Assorted Arts", "Additional Credits"));
  courses.push(makeCourse("Debate", "Rhetoric", "Assorted Arts", "Additional Credits"));
+ courses.push(makeCourse("Mock Trial", "Rhetoric", "Assorted Arts", "Additional Credits"));
+
+ courses.push(makeCourse("Health", "Health"));
 
  function sortCompare(a, b) {
      return a.name.localeCompare(b.name);
