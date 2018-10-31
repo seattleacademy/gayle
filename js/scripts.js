@@ -114,10 +114,10 @@ function updateCohort() {
 
 }
 
-$('#maincontainer').load('plan.html', loadterms);
+$('#maincontainer').load('html/plan.html', loadterms);
 
 function loadterms() {
-    $('#terms').load('terms.html', startupscripts);
+    $('#terms').load('html/terms.html', startupscripts);
 }
 
 function startupscripts() {
