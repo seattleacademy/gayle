@@ -57,19 +57,19 @@
           reqs.push(makeReq("History", 9));
           reqs.push(makeReq("Math", 9));
           reqs.push(makeReq("Science", 9));
-          reqs.push(makeReq("P.E.", 6));
-          reqs.push(makeReq("Arts", 6));
+          //reqs.push(makeReq("P.E.", 6));
+          //reqs.push(makeReq("Arts", 6));
           reqs.push(makeReq("Outdoor Education", 1));
-          reqs.push(makeReq("Language", 9));
+          reqs.push(makeReq("World Languages", 9));
       }
       if (cohort == "Northwest School") {
           reqs.push(makeReq("English", 12));
           reqs.push(makeReq("History", 12));
           reqs.push(makeReq("Math", 9));
           reqs.push(makeReq("Science", 9));
-          reqs.push(makeReq("P.E.", 6));
-          reqs.push(makeReq("Arts", 12));
-          reqs.push(makeReq("Language", 9));
+          //reqs.push(makeReq("P.E.", 6));
+          //reqs.push(makeReq("Arts", 12));
+          reqs.push(makeReq("World Languages", 9));
       }
   }
 
@@ -95,13 +95,12 @@
 
       var totalArt = {};
       totalArt.name = "Total Art";
-      if (cohort == "2020" || cohort == "2019") {
-          totalArt.count = 9;
-      } else if (cohort == "2021" || cohort == "2022") {
-          totalArt.count = 7;
-      } else if (cohort == "Seattle Public") {
-          totalArt.count = 6;
-      }
+      if (cohort == "2020" || cohort == "2019") totalArt.count = 9;
+        
+      if (cohort == "2021" || cohort == "2022") totalArt.count = 7;
+      if (cohort == "Seattle Public") totalArt.count = 6;
+      if (cohort == "Northwest School") totalArt.count = 12;
+      if (cohort == "Lakeside School") totalArt.count = 6;
       totalArt.recommended = totalArt.count;
       totalArt.earned = 0;
       for (var i = 0; i < myCourses.length; i++) {
