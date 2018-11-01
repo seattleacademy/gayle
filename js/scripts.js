@@ -107,6 +107,25 @@ function updateInOut() {
 
 }
 
+function importClassList() {
+    var coursetext = $("#inout").text();
+    var lines = coursetext.split('\n');
+    myCourses = [];
+    var course = {};
+    for (var i = 0; i < lines.length; i++) {
+        line = lines[i].split(',');
+        if(line.length != 3) continue;
+        course = {};
+        course.name = line[0];
+        course.req = line[1];
+        course.term = line[2];
+        course.time = Date.now();
+        myCourses.push(course);
+    }
+    updateCourseList();
+    updateReqsList(reqs);
+}
+
 function updateCohort() {
     cohort = $("#cohort option:selected").text();
     setRequirements(cohort);
@@ -129,4 +148,5 @@ function startupscripts() {
     $('body').on('click', '.coursesitem', addCourse);
     $('body').on('click', '.close', removeCourse);
     $('body').on('change', '#cohort', updateCohort);
+    $('body').on('click', '#importclasslist', importClassList);
 }
