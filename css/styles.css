@@ -26,3 +26,9 @@
 	min-width: 100%;
 	white-space: pre;
 }
+
+.navbar-brand{
+    background-image: url('../img/saas.svg');
+    background-repeat: no-repeat;
+    color:transparent !important;
+}
