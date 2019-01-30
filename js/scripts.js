@@ -131,6 +131,10 @@ function updateCohort() {
     setRequirements(cohort);
     updateReqsList(reqs);
 
+    if (document.getElementById("cohort").value == "2021"){
+        console.log("test");
+    } 
+    
 }
 $('nav').load('html/nav.html', loadmaincontainer);
 
@@ -142,6 +146,12 @@ function loadterms() {
     $('#terms').load('html/terms.html', startupscripts);
 }
 
+function showall(e){
+    //console.log("shwoall", e);
+    $(".offyear").removeClass("offyear");
+
+}
+
 function startupscripts() {
     $(".course-menu").html(makeCoursesMenu(courses));
     updateReqsList(reqs);
@@ -149,4 +159,5 @@ function startupscripts() {
     $('body').on('click', '.close', removeCourse);
     $('body').on('change', '#cohort', updateCohort);
     $('body').on('click', '#importclasslist', importClassList);
+    $('body').on('click', '#showall', showall);
 }

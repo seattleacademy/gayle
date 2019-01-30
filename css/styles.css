@@ -1,13 +1,22 @@
 .card {
     /*width: 18rem;*/
+    background: tomato;
 }
 
 /*Needed because long course list is problem*/
 .scrollable-menu {
-    height: auto;
+    height: auto;   
     max-height: 200px;
     overflow-x: hidden;
 }
+
+.offyear{
+    display: none;
+}
+
+.registrationyear{
+}
+
 .progress{
 	background: black;
 }
