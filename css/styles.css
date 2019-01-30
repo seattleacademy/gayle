@@ -1,5 +1,6 @@
 .card {
     /*width: 18rem;*/
+    background:pink;
 }
 
 /*Needed because long course list is problem*/
@@ -8,8 +9,17 @@
     max-height: 200px;
     overflow-x: hidden;
 }
+
+.offyear{
+    background:green;
+    /*display:none;*/
+}
+
+.registrationyear{
+    background:blue;
+}
 .progress{
-	background: black;
+	background: #FF0000;
 }
 
 .coursename{
