@@ -1,0 +1,9 @@
+Sandoval	Luca	M	Brooks Hopp	10	Gary Anderson	Adv Algebra	2	AC106	lucasandoval	bhopp
+Sandoval	Luca	M	Brooks Hopp	10	Brooks Hopp	Advisor	COMMUNITY		lucasandoval	bhopp
+Sandoval	Luca	M	Brooks Hopp	10	Shelley Kunasek	Chemistry	7	STR301	lucasandoval	bhopp
+Sandoval	Luca	M	Brooks Hopp	10	Jason Gough	English 10	6	T2	lucasandoval	bhopp
+Sandoval	Luca	M	Brooks Hopp	10	Lisa Feiertag	History 10	5	T1	lucasandoval	bhopp
+Sandoval	Luca	M	Brooks Hopp	10	Michael Cruz	Improvisation	4	AC7	lucasandoval	bhopp
+Sandoval	Luca	M	Brooks Hopp	10	Gary Anderson	Software Development	8	AC106	lucasandoval	bhopp
+Sandoval	Luca	M	Brooks Hopp	10	Stephanie Bloom	Spanish 3	1	V3	lucasandoval	bhopp
+Sandoval	Luca	M	Brooks Hopp	10	Annalise Olson	Studio Arts	3	AC203	lucasandoval	bhopp

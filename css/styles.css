@@ -1,6 +1,6 @@
 .card {
     /*width: 18rem;*/
-    background: tomato;
+    background: lightblue;
 }
 
 /*Needed because long course list is problem*/
@@ -11,11 +11,13 @@
 }
 
 .offyear{
-    display: none;
+    visibility: hidden;
 }
 
-.registrationyear{
+.onyear{
+    visibility: visible;   
 }
+
 
 .progress{
 	background: black;
@@ -30,6 +32,10 @@
     height: 10px;
 }*/
 
+.selectText{
+    font-weight: bold;
+}
+
 #inout{
 	font-size: 10px;
 	min-width: 100%;
@@ -40,4 +46,9 @@
     background-image: url('../img/saas.svg');
     background-repeat: no-repeat;
     color:transparent !important;
+}
+
+#yearname{
+    text-align: center;
+    font-weight: bold;
 }

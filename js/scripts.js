@@ -131,9 +131,39 @@ function updateCohort() {
     setRequirements(cohort);
     updateReqsList(reqs);
 
+    console.log("test cohort update");
+
+        $(".year1").removeClass("offyear onyear");
+        $(".year2").removeClass("offyear onyear");
+        $(".year3").removeClass("offyear onyear");
+        $(".year4").removeClass("offyear onyear");
+    
     if (document.getElementById("cohort").value == "2021"){
-        console.log("test");
-    } 
+        $(".year1").addClass("offyear");
+        $(".year2").addClass("offyear");
+        $(".year3").addClass("onyear");
+        $(".year4").addClass("offyear");
+        console.log("test 2021 cohort");
+
+    } else if (document.getElementById("cohort").value == "2022"){
+        $(".year1").addClass("offyear");
+        $(".year2").addClass("onyear");
+        $(".year3").addClass("offyear");
+        $(".year4").addClass("offyear");
+
+    } else if (document.getElementById("cohort").value == "2020"){
+        $(".year1").addClass("offyear");
+        $(".year2").addClass("offyear");
+        $(".year3").addClass("offyear");
+        $(".year4").addClass("onyear");
+
+    } else if (document.getElementById("cohort").value == "2019"){
+        $(".year1").addClass("offyear");
+        $(".year2").addClass("offyear");
+        $(".year3").addClass("offyear");
+        $(".year4").addClass("onyear");
+
+    }
     
 }
 $('nav').load('html/nav.html', loadmaincontainer);
@@ -148,8 +178,32 @@ function loadterms() {
 
 function showall(e){
     //console.log("shwoall", e);
-    $(".offyear").removeClass("offyear");
+        $(".year1").removeClass("offyear");
+        $(".year2").removeClass("offyear");
+        $(".year3").removeClass("offyear");
+        $(".year4").removeClass("offyear");
+                
+        $(".year1").addClass("onyear");
+        $(".year2").addClass("onyear");
+        $(".year3").addClass("onyear");
+        $(".year4").addClass("onyear");
 
+        console.log("test!!");
+}
+
+function hideall(e){
+    //console.log("shwoall", e);
+        $(".year1").removeClass("onyear");
+        $(".year2").removeClass("onyear");
+        $(".year3").removeClass("onyear");
+        $(".year4").removeClass("onyear");
+                
+        $(".year1").addClass("offyear");
+        $(".year2").addClass("offyear");
+        $(".year3").addClass("offyear");
+        $(".year4").addClass("offyear");
+
+        console.log("test!!");
 }
 
 function startupscripts() {
@@ -160,4 +214,19 @@ function startupscripts() {
     $('body').on('change', '#cohort', updateCohort);
     $('body').on('click', '#importclasslist', importClassList);
     $('body').on('click', '#showall', showall);
+    $('body').on('click', '#hideall', hideall);
 }
+
+function importClasses(){
+
+
+    function showLines(allText){
+        var result = (allText.split("\\n"));
+        console.log(result);
+    }
+
+    $.get('js/coursedatatest.txt', showLines);
+
+}
+
+importClasses();
