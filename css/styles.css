@@ -1,19 +1,30 @@
 .card {
     /*width: 18rem;*/
+    background: lightblue;
 }
 
 /*Needed because long course list is problem*/
 .scrollable-menu {
-    height: auto;
+    height: auto;   
     max-height: 200px;
     overflow-x: hidden;
 }
+
+.offyear{
+    visibility: hidden;
+}
+
+.onyear{
+    visibility: visible;   
+}
+
+
 .progress{
-	background: black;
+    background: black;
 }
 
 .coursename{
-	font-size:75%
+    font-size:75%
 }
 /* Overrides list-group-item from Bootstrap */ 
 /*.list-group-item {
@@ -21,14 +32,23 @@
     height: 10px;
 }*/
 
+.selectText{
+    font-weight: bold;
+}
+
 #inout{
-	font-size: 10px;
-	min-width: 100%;
-	white-space: pre;
+    font-size: 10px;
+    min-width: 100%;
+    white-space: pre;
 }
 
 .navbar-brand{
     background-image: url('../img/saas.svg');
     background-repeat: no-repeat;
     color:transparent !important;
+}
+
+#yearname{
+    text-align: center;
+    font-weight: bold;
 }
