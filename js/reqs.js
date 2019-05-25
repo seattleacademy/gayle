@@ -16,34 +16,34 @@
 
   function setRequirements(cohort) {
       reqs = [];
-      if (cohort == "2023" ||cohort == "2022" || cohort == "2021" || cohort == "2020" || cohort == "2019") {
-          reqs.push(makeReq("English", 12));
-          reqs.push(makeReq("Math", 9, 12));
-          reqs.push(makeReq("Science", 9, 12));
-          reqs.push(makeReq("World Languages", 9, 12));
-          reqs.push(makeReq("Dance", 1));
-          reqs.push(makeReq("Music", 1));
-          reqs.push(makeReq("Visual", 1));
-          reqs.push(makeReq("Theater", 1));
-      }
       if (cohort == "2023" || cohort == "2022" || cohort == "2021") {
-          reqs.push(makeReq("History", 9, 12));
-          reqs.push(makeReq("P.E.", 4));
           reqs.push(makeReq("CompThinking/AI", 2));
-          reqs.push(makeReq("Innovations", 2));
           reqs.push(makeReq("Entrepreneurship/FL", 2));
+          reqs.push(makeReq("Innovations", 2));
           reqs.push(makeReq("Health", 2));
       }
       if (cohort == "2023" || cohort == "2022") {
           reqs.push(makeReq("Rhetoric", 1));
       }
+      if (cohort == "2023" || cohort == "2022" || cohort == "2021") {
+          reqs.push(makeReq("P.E.", 4));
+      }
       if (cohort == "2020" || cohort == "2019") {
           reqs.push(makeReq("P.E.", 6));
       }
+      if (cohort == "2023" || cohort == "2022" || cohort == "2021" || cohort == "2020" || cohort == "2019") {
+          reqs.push(makeReq("Dance", 1));
+          reqs.push(makeReq("Music", 1));
+          reqs.push(makeReq("Theater", 1));
+          reqs.push(makeReq("Visual", 1));
+          reqs.push(makeReq("English", 12));
+          reqs.push(makeReq("History", 9, 12));
+          reqs.push(makeReq("Math", 9, 12));
+          reqs.push(makeReq("Science", 9, 12));
+          reqs.push(makeReq("World Languages", 9, 12));
+      }
       $("#cohort").val(cohort);
-      console.log(cohort,$("#cohort").val());
   }
-
 
   function accumList(cohort, myCourses = []) {
       accumreqs = [];
@@ -66,7 +66,7 @@
       var totalArt = {};
       totalArt.name = "Total Art";
       if (cohort == "2020" || cohort == "2019") totalArt.count = 9;
-        
+
       if (cohort == "2023" || cohort == "2022" || cohort == "2021") totalArt.count = 7;
       totalArt.recommended = totalArt.count;
       totalArt.earned = 0;
