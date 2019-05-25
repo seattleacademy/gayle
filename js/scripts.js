@@ -143,8 +143,9 @@ function loadterms() {
 }
 
 function startupscripts() {
-    $(".course-menu").html(makeCoursesMenu(courses));
+    setRequirements("2022");
     updateReqsList(reqs);
+    $(".course-menu").html(makeCoursesMenu(courses));
     $('body').on('click', '.coursesitem', addCourse);
     $('body').on('click', '.close', removeCourse);
     $('body').on('change', '#cohort', updateCohort);
