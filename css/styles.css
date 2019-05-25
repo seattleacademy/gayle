@@ -5,50 +5,55 @@
 
 /*Needed because long course list is problem*/
 .scrollable-menu {
-    height: auto;   
+    height: auto;
     max-height: 200px;
     overflow-x: hidden;
 }
 
-.offyear{
+.offyear {
     visibility: hidden;
 }
 
-.onyear{
-    visibility: visible;   
+.onyear {
+    visibility: visible;
 }
 
 
-.progress{
+.progress {
     background: black;
 }
 
-.coursename{
-    font-size:75%
+.coursename {
+    font-size: 75%
 }
-/* Overrides list-group-item from Bootstrap */ 
+
+/* Overrides list-group-item from Bootstrap */
 /*.list-group-item {
     padding: 1px 1px
     height: 10px;
 }*/
 
-.selectText{
+.selectText {
     font-weight: bold;
 }
 
-#inout{
+#inout {
     font-size: 10px;
     min-width: 100%;
     white-space: pre;
 }
 
-.navbar-brand{
+.navbar-brand {
     background-image: url('../img/saas.svg');
     background-repeat: no-repeat;
-    color:transparent !important;
+    color: transparent !important;
 }
 
-#yearname{
+.yearname {
     text-align: center;
     font-weight: bold;
+}
+
+#maincontainer {
+    min-width: 992px;
 }
