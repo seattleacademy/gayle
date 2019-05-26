@@ -154,10 +154,16 @@ function updateCohort() {
 function updateDom(grad_year){
     if(grad_year){
         setRequirements(grad_year);
-        updateReqsList(reqs);
-    };
+        $('#cohort').attr('disabled', true);
+    }
+    else{
+        setRequirements("2023");
+    }
+    updateReqsList(reqs);
     updateCourseList();
     updateInOut();
+    //Adjust home link for current server
+    $("#homelink").attr("href", window.location.protocol+'//'+window.location.hostname);
 }
 
 $('nav').load('html/nav.html', loadmaincontainer);
@@ -172,11 +178,18 @@ function loadterms() {
 }
 
 function startupscripts() {
-    // setRequirements("2022");
-    // updateReqsList(reqs);
+    var loginButton = atob(localStorage['login_button']);
+//    console.log(loginButton);
+    $('#theCourseCommands').load('php/load_courses.php');
+    $("#login_button").html(loginButton);
     $(".course-menu").html(makeCoursesMenu(courses));
     $('body').on('click', '.coursesitem', addCourse);
     $('body').on('click', '.close', removeCourse);
     $('body').on('change', '#cohort', updateCohort);
     $('body').on('click', '#importclasslist', importClassList);
 }
+
+// for (var key in localStorage) {
+//   console.log(key + ':' + localStorage[key]);
+// }
+

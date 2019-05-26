@@ -38,6 +38,14 @@
           reqs.push(makeReq("FL", 9));
       }
       $("#cohort").val(cohort);
+      $(".collapse").collapse('hide');
+      let baseyear = 2023;
+      $("#collapse"+(baseyear-cohort).toString()).collapse('show');
+      $("#year1").text('Freshman Year ' + (cohort - 4).toString() + ' to '  + (cohort - 3).toString()); 
+      $("#year2").text('Sophomore Year ' + (cohort - 3).toString() + ' to '  + (cohort - 2).toString()); 
+      $("#year3").text('Junior Year ' + (cohort - 2).toString() + ' to '  + (cohort - 1).toString()); 
+      $("#year4").text('Senior Year ' + (cohort - 1).toString() + ' to '  + (cohort - 0).toString()); 
+
   }
 
   function accumList(cohort, myCourses = []) {

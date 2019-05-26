@@ -1,6 +1,5 @@
 <?php
 require_once 'config.php';
-error_log("makeCourseMenu");
 $servername = DB_HOST;
 $username = DB_USERNAME;
 $password = DB_PASSWORD;

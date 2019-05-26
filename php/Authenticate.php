@@ -30,12 +30,21 @@
     // Insert or update user data to the database
     $gpUserData['oauth_provider'] = 'google';
     $userData = $user->checkUser($gpUserData);
+
     // Storing user data in the session
+    $stu_id = $userData['user_id'];
+    if(!empty($_REQUEST["stu_id"])) $stu_id = $_REQUEST["stu_id"];
+    $userData['stu_id'] = $stu_id;
     $_SESSION['userData'] = $userData; 
-    //error_log( print_r($userData, TRUE) );
+//    error_log( print_r($userData, TRUE) );
+    setLocalStorage("user_id",$userData['user_id']);
+    setLocalStorage("first_name",$userData['first_name']); 
+    setLocalStorage("last_name",$userData['last_name']);
+    setLocalStorage("email",$userData['email']);
+    setLocalStorage("picture",$userData['picture']);
+    setLocalStorage("stu_id",$userData['stu_id']);
 
     $output = '<button><a href="logout.php">Logout</a></button>';
-    $output .= ' <b>Email:</b> '.$userData['email'];
 }
 
 else{
@@ -45,4 +54,7 @@ else{
     // Render google login button
     $output = '<button><a href="'.filter_var($authUrl, FILTER_SANITIZE_URL).'">Login</a></button>';
 }
-echo $output;
+// echo $output;
+// error_log($output);
+setLocalStorage("login_button",base64_encode($output));
+
