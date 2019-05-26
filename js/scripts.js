@@ -132,9 +132,17 @@ function updateCohort() {
     updateReqsList(reqs);
 
 }
+
+function updateDom(){
+    console.log('updateDom',myCourses);
+    updateCourseList();
+    updateInOut();
+}
+
 $('nav').load('html/nav.html', loadmaincontainer);
 
 function loadmaincontainer() {
+    $('#users_menu').load('php/users_menu.php');
     $('#maincontainer').load('html/plan.html', loadterms);
 }
 

@@ -29,8 +29,9 @@
     <script src="js/reqs.js"></script>
     <script src="js/courses.js"></script>
     <script src="js/scripts.js"></script>
-    <script>
-    </script>
+        <?php 
+    require_once 'php/load_courses.php';
+    ?>
 </body>
 
 </html>

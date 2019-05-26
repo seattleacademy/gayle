@@ -32,7 +32,7 @@
     $userData = $user->checkUser($gpUserData);
     // Storing user data in the session
     $_SESSION['userData'] = $userData; 
-    error_log( print_r($userData, TRUE) );
+    //error_log( print_r($userData, TRUE) );
 
     $output = '<button><a href="logout.php">Logout</a></button>';
     $output .= ' <b>Email:</b> '.$userData['email'];
