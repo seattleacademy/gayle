@@ -32,7 +32,7 @@ function updateReqsList() {
     for (var i = 0; i < reqs.length; i++) {
         reqlist += '<li class="list-group-item py-1">';
         reqlist += '<div class="progress">';
-        reqlist += '<div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width:'
+        reqlist += '<div class="progress-bar" role="progressbar" style="width:'
         reqlist += (((reqCount(reqs[i].name) / reqs[i].count) * 100)).toString();
         reqlist += '%">'
         name = fullRecName(reqs[i].name);
@@ -47,7 +47,7 @@ function updateReqsList() {
         if (accum[i] == undefined) continue;
         reqlist += '<li class="list-group-item py-1">';
         reqlist += '<div class="progress">';
-        reqlist += '<div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width:'
+        reqlist += '<div class="progress-bar" role="progressbar" style="width:'
         reqlist += ((accum[i].earned / accum[i].count) * 100);
         reqlist += '%">'
         reqlist += accum[i].name + ' ' + accum[i].earned + '/' + accum[i].count;
@@ -151,8 +151,11 @@ function updateCohort() {
 
 }
 
-function updateDom(){
-    console.log('updateDom',myCourses);
+function updateDom(grad_year){
+    if(grad_year){
+        setRequirements(grad_year);
+        updateReqsList(reqs);
+    };
     updateCourseList();
     updateInOut();
 }
@@ -169,8 +172,8 @@ function loadterms() {
 }
 
 function startupscripts() {
-    setRequirements("2022");
-    updateReqsList(reqs);
+    // setRequirements("2022");
+    // updateReqsList(reqs);
     $(".course-menu").html(makeCoursesMenu(courses));
     $('body').on('click', '.coursesitem', addCourse);
     $('body').on('click', '.close', removeCourse);

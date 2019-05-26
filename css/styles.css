@@ -22,7 +22,9 @@
 .progress {
     background: black;
 }
-
+.progress-bar{
+    text-align:left;
+}
 .coursename {
     font-size: 75%
 }
@@ -52,6 +54,8 @@
 .yearname {
     text-align: center;
     font-weight: bold;
+      display: block;
+
 }
 
 #maincontainer {
