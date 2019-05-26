@@ -10,15 +10,33 @@ function reqCount(theReq) {
     return count;
 }
 
+function fullRecName(name){
+    if(name=='EN') return "English";
+    if(name=='MA') return "Math";
+    if(name=='SC') return "Science";
+    if(name=='FL') return "World Languages";
+    if(name=='AD') return "Dance";
+    if(name=='AM') return "Music";
+    if(name=='AV') return "Visual";
+    if(name=='AP') return "Theatre";
+    if(name=='HI') return "History";
+    if(name=='CT') return "CompThinking/AI";
+    if(name=='IN') return "Innovations";
+    if(name=='EF') return "Entreprenurship/FL";
+    if(name=='HE') return "Health";
+    if(name=='RE') return "Rhetoric";
+    return name;
+}
 function updateReqsList() {
     var reqlist = "";
     for (var i = 0; i < reqs.length; i++) {
         reqlist += '<li class="list-group-item py-1">';
         reqlist += '<div class="progress">';
         reqlist += '<div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width:'
-        reqlist += ((reqCount(reqs[i].name) / reqs[i].recommended) * 100);
+        reqlist += (((reqCount(reqs[i].name) / reqs[i].recommended) * 100)).toString();
         reqlist += '%">'
-        reqlist += reqs[i].name + ' ' + reqCount(reqs[i].name) + '/' + reqs[i].count;
+        name = fullRecName(reqs[i].name);
+        reqlist += name + ' ' + reqCount(reqs[i].name) + '/' + reqs[i].count;
         reqlist += '</div>' //close .progress-bar div
         reqlist += '</div>' //close .progress div
         reqlist += "</li>";
