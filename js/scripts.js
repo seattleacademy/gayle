@@ -33,7 +33,7 @@ function updateReqsList() {
         reqlist += '<li class="list-group-item py-1">';
         reqlist += '<div class="progress">';
         reqlist += '<div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width:'
-        reqlist += (((reqCount(reqs[i].name) / reqs[i].recommended) * 100)).toString();
+        reqlist += (((reqCount(reqs[i].name) / reqs[i].count) * 100)).toString();
         reqlist += '%">'
         name = fullRecName(reqs[i].name);
         reqlist += name + ' ' + reqCount(reqs[i].name) + '/' + reqs[i].count;
@@ -48,7 +48,7 @@ function updateReqsList() {
         reqlist += '<li class="list-group-item py-1">';
         reqlist += '<div class="progress">';
         reqlist += '<div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width:'
-        reqlist += ((accum[i].earned / accum[i].recommended) * 100);
+        reqlist += ((accum[i].earned / accum[i].count) * 100);
         reqlist += '%">'
         reqlist += accum[i].name + ' ' + accum[i].earned + '/' + accum[i].count;
         reqlist += '</div>' //close .progress-bar div
