@@ -80,3 +80,11 @@
     list-style-type: none;
     font-size: 75%;
 }
+
+#studentAlert{
+    display: none;
+}
+
+#historyAlert{
+    display: none;
+}

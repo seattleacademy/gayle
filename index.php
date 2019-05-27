@@ -24,6 +24,15 @@
     <nav class="navbar navbar-expand navbar-light bg-light">
         <!-- Loading from html/nav.html.  Check debugger if you see this message. -->
     </nav>
+    
+        <div class="container">
+    <div class="alert alert-warning" id="studentAlert" role="alert">
+          Student:  <span id="users_menu"></span>
+    </div>
+    <div class="alert alert-warning" id="historyAlert" role="alert">
+        <span id=result>Save your changes to see history menu.</span>
+    </div>
+</div>
     <div class="container" id="maincontainer">
         <!-- Loading content from scripts. Check the debugger if you see this message. -->
     </div>

@@ -10,27 +10,31 @@ function reqCount(theReq) {
     return count;
 }
 
-function fullRecName(name){
-    if(name=='EN') return "English";
-    if(name=='MA') return "Math";
-    if(name=='SC') return "Science";
-    if(name=='FL') return "World Languages";
-    if(name=='AD') return "Dance";
-    if(name=='AM') return "Music";
-    if(name=='AV') return "Visual";
-    if(name=='AP') return "Theatre";
-    if(name=='HI') return "History";
-    if(name=='CT') return "CompThinking/AI";
-    if(name=='IN') return "Innovations";
-    if(name=='EF') return "Entreprenurship/FL";
-    if(name=='HE') return "Health";
-    if(name=='RE') return "Rhetoric";
+function fullRecName(name) {
+    if (name == 'EN') return "English";
+    if (name == 'MA') return "Math";
+    if (name == 'SC') return "Science";
+    if (name == 'FL') return "World Languages";
+    if (name == 'AD') return "Dance";
+    if (name == 'AM') return "Music";
+    if (name == 'AV') return "Visual";
+    if (name == 'AP') return "Theatre";
+    if (name == 'HI') return "History";
+    if (name == 'CT') return "CompThinking/AI";
+    if (name == 'IN') return "Innovations";
+    if (name == 'EF') return "Entreprenurship/FL";
+    if (name == 'HE') return "Health";
+    if (name == 'RE') return "Rhetoric";
     return name;
 }
+
 function updateReqsList() {
     var reqlist = "";
     for (var i = 0; i < reqs.length; i++) {
-        reqlist += '<li class="list-group-item py-1">';
+        reqlist += '<li class="list-group-item py-1 reqname" ';
+        reqlist += 'data-toggle="collapse" data-target="#collapse-';
+        reqlist += reqs[i].name;
+        reqlist += '">';
         reqlist += '<div class="progress">';
         reqlist += '<div class="progress-bar" role="progressbar" style="width:'
         reqlist += (((reqCount(reqs[i].name) / reqs[i].count) * 100)).toString();
@@ -40,6 +44,17 @@ function updateReqsList() {
         reqlist += '</div>' //close .progress-bar div
         reqlist += '</div>' //close .progress div
         reqlist += "</li>";
+        reqlist += '<div id="collapse-';
+        reqlist += reqs[i].name;
+        reqlist += '" class="collapse hide" data-parent="#theReqs">';
+        for (var j = 0; j < courses.length; j++) {
+            if (courses[j].req == reqs[i].name) {
+                reqlist += '<li class="reqCourses">';
+                reqlist += courses[j].name;
+                reqlist += '</li>';
+            }
+        }
+        reqlist += '</div>';
     }
     cohort = $("#cohort option:selected").text();
     accum = accumList(cohort, myCourses);
@@ -132,7 +147,7 @@ function importClassList() {
     var course = {};
     for (var i = 0; i < lines.length; i++) {
         line = lines[i].split(',');
-        if(line.length != 3) continue;
+        if (line.length != 3) continue;
         course = {};
         course.name = line[0];
         course.req = line[1];
@@ -151,19 +166,18 @@ function updateCohort() {
 
 }
 
-function updateDom(grad_year){
-    if(grad_year){
+function updateDom(grad_year) {
+    if (grad_year) {
         setRequirements(grad_year);
         $('#cohort').attr('disabled', true);
-    }
-    else{
+    } else {
         setRequirements("2023");
     }
     updateReqsList(reqs);
     updateCourseList();
     updateInOut();
     //Adjust home link for current server
-    $("#homelink").attr("href", window.location.protocol+'//'+window.location.hostname);
+    $("#homelink").attr("href", window.location.protocol + '//' + window.location.hostname);
 }
 
 $('nav').load('html/nav.html', loadmaincontainer);
@@ -179,7 +193,7 @@ function loadterms() {
 
 function startupscripts() {
     var loginButton = atob(localStorage['login_button']);
-//    console.log(loginButton);
+    //    console.log(loginButton);
     $('#theCourseCommands').load('php/load_courses.php');
     $("#login_button").html(loginButton);
     $(".course-menu").html(makeCoursesMenu(courses));
@@ -187,9 +201,39 @@ function startupscripts() {
     $('body').on('click', '.close', removeCourse);
     $('body').on('change', '#cohort', updateCohort);
     $('body').on('click', '#importclasslist', importClassList);
+    $('body').on('click', '#saveCourses', saveCourses);
+    $('body').on('click', '.toggleStudentAlert', toggleStudentAlert);
+    $('body').on('click', '.toggleHistoryAlert', toggleHistoryAlert);
+    $('body').on('change', '#historyList', doHistoryList);
 }
 
+function doHistoryList(e) {
+    var courses_id = $(this).children("option:selected").val();
+        $.get("getSavedCourses.php", { courses_id: courses_id }, function(data) {
+            myCourses = JSON.parse(data);
+            updateReqsList(reqs);
+            updateCourseList();
+    });
+
+}
+function toggleStudentAlert(e) {
+    $("#studentAlert").toggle();
+}
+
+function toggleHistoryAlert(e) {
+    $("#historyAlert").toggle();
+        $.post("historyMenu.php", {}, function(data) {
+        $("#result").html(data);
+    });
+}
+
+function saveCourses(e) {
+    $.post("saveCourses.php", { courses: JSON.stringify(myCourses) }, function(data) {
+        $("#result").html(data);
+        $("#historyAlert").show();
+
+    });
+}
 // for (var key in localStorage) {
 //   console.log(key + ':' + localStorage[key]);
 // }
-

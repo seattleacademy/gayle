@@ -35,16 +35,22 @@
     $stu_id = $userData['user_id'];
     if(!empty($_REQUEST["stu_id"])) $stu_id = $_REQUEST["stu_id"];
     $userData['stu_id'] = $stu_id;
+    $courses_id = "0";
+    if(!empty($_REQUEST["courses_id"])) $courses_id = $_REQUEST["courses_id"];
+    $userData['courses_id'] = $courses_id;
+
     $_SESSION['userData'] = $userData; 
-//    error_log( print_r($userData, TRUE) );
+    // error_log( print_r($userData, TRUE) );
     setLocalStorage("user_id",$userData['user_id']);
     setLocalStorage("first_name",$userData['first_name']); 
     setLocalStorage("last_name",$userData['last_name']);
     setLocalStorage("email",$userData['email']);
     setLocalStorage("picture",$userData['picture']);
     setLocalStorage("stu_id",$userData['stu_id']);
+    setLocalStorage("courses_id",$userData['courses_id']);
 
     $output = '<button><a href="logout.php">Logout</a></button>';
+    $output .= " <span>".$userData['user_id'].'</span>';
 }
 
 else{
