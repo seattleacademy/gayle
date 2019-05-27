@@ -61,3 +61,22 @@
 #maincontainer {
     min-width: 992px;
 }
+.reqname:before { 
+    content: "";
+    border-color: transparent #111;
+    border-style: solid;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #2f2f2f;
+    display: block;
+    height: 0;
+    width: 0;
+    left: -1em;
+    top: 0.9em;
+    position: relative;
+}
+
+.reqCourses{
+    list-style-type: none;
+    font-size: 75%;
+}
