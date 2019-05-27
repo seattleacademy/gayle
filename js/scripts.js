@@ -192,10 +192,12 @@ function loadterms() {
 }
 
 function startupscripts() {
-    var loginButton = atob(localStorage['login_button']);
-    //    console.log(loginButton);
-    $('#theCourseCommands').load('php/load_courses.php');
-    $("#login_button").html(loginButton);
+    if (localStorage['login_button']) {
+        var loginButton = atob(localStorage['login_button']);
+        //    console.log(loginButton);
+        $('#theCourseCommands').load('php/load_courses.php');
+        $("#login_button").html(loginButton);
+    }
     $(".course-menu").html(makeCoursesMenu(courses));
     $('body').on('click', '.coursesitem', addCourse);
     $('body').on('click', '.close', removeCourse);
@@ -209,20 +211,21 @@ function startupscripts() {
 
 function doHistoryList(e) {
     var courses_id = $(this).children("option:selected").val();
-        $.get("getSavedCourses.php", { courses_id: courses_id }, function(data) {
-            myCourses = JSON.parse(data);
-            updateReqsList(reqs);
-            updateCourseList();
+    $.get("getSavedCourses.php", { courses_id: courses_id }, function(data) {
+        myCourses = JSON.parse(data);
+        updateReqsList(reqs);
+        updateCourseList();
     });
 
 }
+
 function toggleStudentAlert(e) {
     $("#studentAlert").toggle();
 }
 
 function toggleHistoryAlert(e) {
     $("#historyAlert").toggle();
-        $.post("historyMenu.php", {}, function(data) {
+    $.post("historyMenu.php", {}, function(data) {
         $("#result").html(data);
     });
 }

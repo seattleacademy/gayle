@@ -38,7 +38,7 @@
           reqs.push(makeReq("FL", 9));
       }
       $("#cohort").val(cohort);
-      $(".collapse").collapse('hide');
+//      $(".collapse").collapse('hide');
       let baseyear = 2023;
       $("#collapse"+(baseyear-cohort).toString()).collapse('show');
       $("#year1").text('Freshman Year ' + (cohort - 4).toString() + ' to '  + (cohort - 3).toString()); 
