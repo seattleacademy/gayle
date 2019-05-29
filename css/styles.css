@@ -92,3 +92,7 @@
 #studentMenu{
     display: none;
 }
+
+#adviceAlert{
+    display: none;
+}

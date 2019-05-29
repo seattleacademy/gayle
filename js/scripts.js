@@ -183,8 +183,8 @@ function updateDom(grad_year) {
 $('nav').load('html/nav.html', loadmaincontainer);
 
 function loadmaincontainer() {
-    $('#users_menu').load('php/users_menu.php',function(data){
-        if(data) $("#studentMenu").show(); //don't show student menu to students
+    $('#users_menu').load('php/users_menu.php', function(data) {
+        if (data) $("#studentMenu").show(); //don't show student menu to students
     });
     $('#maincontainer').load('html/plan.html', loadterms);
 }
@@ -194,14 +194,22 @@ function loadterms() {
 }
 
 function startupscripts() {
-
     if (localStorage['login_button']) {
         var loginButton = atob(localStorage['login_button']);
-        //    console.log(loginButton);
-        $('#theCourseCommands').load('php/load_courses.php');
+        //    console.log(loginButton)
+        $('#theCourseCommands').load('php/load_courses.php', function() {
+            if (myCourses.length == 0) {
+                setRequirements("2023");
+                updateReqsList(reqs);
+                updateCourseList();
+                $("#adviceAlert").show();
+            }
+        });
         $("#login_button").html(loginButton);
     }
+
     $(".course-menu").html(makeCoursesMenu(courses));
+
     $('body').on('click', '.coursesitem', addCourse);
     $('body').on('click', '.close', removeCourse);
     $('body').on('change', '#cohort', updateCohort);
