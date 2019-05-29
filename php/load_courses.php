@@ -15,6 +15,9 @@ if ($conn->connect_error) {
 if(!session_id()){
     session_start();
 }
+if(empty($_SESSION['userData'])){
+    exit();
+}
 $user = $_SESSION['userData'];
 
 $stu_id = $user['stu_id'];

@@ -28,9 +28,7 @@ if(!empty($_SESSION['userData'])){
 
     //Can be called directly for debugging
     if(!empty($_REQUEST["stu_id"])) $user_id = $_REQUEST["stu_id"];
-
-    $admins = array('ganderson','gpearl','wfelton','fstrong','alisonray','krettenmier','ltaylor');
-    if(in_array($user['user_id'], $admins)) {
+    if($user['isAdmin']) {
         $sqlstr = "SELECT DISTINCT stu_id,first_name,last_name,grad_year FROM courses";
     }
     else{
@@ -52,6 +50,7 @@ if(!empty($_SESSION['userData'])){
         $myStr .= '</select></form>';
     }
 }
+
 echo $myStr;
 
 $conn->close();

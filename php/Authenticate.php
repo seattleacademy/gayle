@@ -39,6 +39,17 @@
     if(!empty($_REQUEST["courses_id"])) $courses_id = $_REQUEST["courses_id"];
     $userData['courses_id'] = $courses_id;
 
+    $admins = array('ganderson','gpearl','wfelton','fstrong','alisonray','krettenmier','ltaylor',"gabrielgreenstein");
+        if(in_array($userData['user_id'], $admins)) {
+                setLocalStorage("isAdmin",true);
+               $userData['isAdmin'] = true;
+        }
+        else{
+            setLocalStorage("isAdmin",false);
+            $userData['isAdmin'] = false;
+        }
+
+
     $_SESSION['userData'] = $userData; 
     // error_log( print_r($userData, TRUE) );
     setLocalStorage("user_id",$userData['user_id']);

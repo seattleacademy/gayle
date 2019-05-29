@@ -183,7 +183,9 @@ function updateDom(grad_year) {
 $('nav').load('html/nav.html', loadmaincontainer);
 
 function loadmaincontainer() {
-    $('#users_menu').load('php/users_menu.php');
+    $('#users_menu').load('php/users_menu.php',function(data){
+        if(data) $("#studentMenu").show(); //don't show student menu to students
+    });
     $('#maincontainer').load('html/plan.html', loadterms);
 }
 
@@ -192,6 +194,7 @@ function loadterms() {
 }
 
 function startupscripts() {
+
     if (localStorage['login_button']) {
         var loginButton = atob(localStorage['login_button']);
         //    console.log(loginButton);
