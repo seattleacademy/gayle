@@ -43,6 +43,7 @@
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-sortable.min.js"></script>
     <script src="js/reqs.js"></script>
     <script src="js/courses.js"></script>
     <script src="js/scripts.js"></script>
