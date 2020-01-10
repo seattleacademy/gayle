@@ -29,7 +29,7 @@ if(!empty($_SESSION['userData'])){
     //Can be called directly for debugging
     if(!empty($_REQUEST["stu_id"])) $user_id = $_REQUEST["stu_id"];
     if($user['isAdmin']) {
-        $sqlstr = "SELECT DISTINCT stu_id,first_name,last_name,grad_year FROM courses";
+        $sqlstr = "SELECT DISTINCT stu_id,first_name,last_name,grad_year FROM courses ORDER BY first_name,last_name";
     }
     else{
         $sqlstr = "SELECT DISTINCT stu_id,first_name,last_name,grad_year FROM courses WHERE advisor_id='".$user['user_id']."'";
