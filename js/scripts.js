@@ -122,10 +122,10 @@ function updateCourseList() {
             }
         }
         $('.myCourses[data-term=' + theTerm + ']').html(classlist);
-        virtualAdvisor();
 
     }
     updateInOut();
+    virtualAdvisor();
 }
 
 function updateInOut() {
