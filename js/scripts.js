@@ -122,6 +122,8 @@ function updateCourseList() {
             }
         }
         $('.myCourses[data-term=' + theTerm + ']').html(classlist);
+        virtualAdvisor();
+
     }
     updateInOut();
 }
@@ -210,7 +212,8 @@ function startupscripts() {
 
     $(".course-menu").html(makeCoursesMenu(courses));
 
-    $('body').on('click', '.coursesitem', addCourse);
+    $('body').on('click', '.coursesitem', addCourse);  
+    // $('body').on('click', '.coursesitem', virtualAdvisor);
     $('body').on('click', '.close', removeCourse);
     $('body').on('change', '#cohort', updateCohort);
     $('body').on('click', '#importclasslist', importClassList);
@@ -251,3 +254,27 @@ function saveCourses(e) {
 // for (var key in localStorage) {
 //   console.log(key + ':' + localStorage[key]);
 // }
+
+function virtualAdvisor(e){
+    $('#virtualAdvisor').text('You have fully registered');
+    console.log(myCourses);
+    let courseCount = 0
+    for(let i = 0; i < myCourses.length; i++){
+        courseCount++;
+    }
+    if(myCourses.length < 84){
+        $('#virtualAdvisor').text('you need to register for more courses.')
+    }
+    let coursesLeft = 84 - courseCount;
+    $('#virtualAdvisor').text('You have registered for ' + courseCount + ' courses. You need ' + coursesLeft + ' more.')
+
+    let mathCount = 0
+    for(let i = 0; 1<myCourse.length; i++){
+        if(myCourses[i].req == "MA"){
+            mathCount++
+        }
+    }
+    if(mathCount < 12){
+        $('#virtualAdvisor').text("College Advising reccommends all students to take at least 12 math classes.")
+    }
+}
