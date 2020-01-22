@@ -49,7 +49,7 @@ function updateReqsList() {
         reqlist += '" class="collapse hide" data-parent="#theReqs">';
         for (var j = 0; j < courses.length; j++) {
             if (courses[j].req == reqs[i].name) {
-                reqlist += '<li class="reqCourses">';
+                reqlist += '<li data-item="4" class="list-group-item py-0 coursename">';
                 reqlist += courses[j].name;
                 reqlist += '</li>';
             }
@@ -70,7 +70,18 @@ function updateReqsList() {
         reqlist += '</div>' //close .progress div
         reqlist += "</li>";
     }
+
+
     $('#theReqs').html(reqlist);
+    for (var i = 0; i < reqs.length; i++) {
+        reqlist += '<li class="list-group-item py-1 reqname" ';
+        reqlist += 'data-toggle="collapse" data-target="#collapse-';
+        reqlist += reqs[i].name;
+        $("#collapse-" + reqs[i].name).sortable({
+            group: 'courses',
+            drop: false
+        });
+    }
 }
 
 function makeCoursesMenu() {
@@ -114,6 +125,7 @@ function updateCourseList() {
         for (var i = 0; i < myCourses.length; i++) {
             if (myCourses[i].term == theTerm) {
                 classlist += '<li class="list-group-item py-0 coursename">';
+                classlist += '<i class="icon-move"></i>'
                 classlist += myCourses[i].name;
                 classlist += '<button type="button" class="close"';
                 classlist += 'data-item=' + i + '>';
@@ -221,6 +233,26 @@ function startupscripts() {
     $('body').on('click', '.toggleStudentAlert', toggleStudentAlert);
     $('body').on('click', '.toggleHistoryAlert', toggleHistoryAlert);
     $('body').on('change', '#historyList', doHistoryList);
+
+    $(".myCourses").sortable({
+        group: 'courses',
+        // handle: 'i.icon-move',
+        onDragStart: function($item, container, _super) {
+            // Duplicate items of the no drop area
+            if (!container.options.drop)
+                $item.clone().insertAfter($item);
+            _super($item, container);
+        },
+        onDrop: function($item, container, _super, event) {
+            $item.removeClass(container.group.options.draggedClass).removeAttr("style")
+            $("body").removeClass(container.group.options.bodyClass),
+            console.log($item,container,_super)
+        }
+    });
+    // $("#collapse-CT").sortable({
+    //     group:'courses',
+    //     drop:false
+    // });
 }
 
 function doHistoryList(e) {
