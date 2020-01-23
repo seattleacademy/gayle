@@ -22,6 +22,10 @@ $user = $_SESSION['userData'];
 
 $stu_id = $user['stu_id'];
 
+if($stu_id=="bencady"){
+    $stu_id = "bensoncady";
+}
+// $stu_id = "bensoncady";
 $sql_courses = sprintf("SELECT * FROM courses WHERE stu_id='%s' ", $stu_id);
 $result = $conn->query($sql_courses);
         echo '<script>myCourses = [];</script>';
